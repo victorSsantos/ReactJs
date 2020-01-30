@@ -1,12 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from 'react'
+import ReactDom from 'react-dom';
+// import Familia from './components/Family'
+// import FamiliaChildren from './components/FamilyChildren'
+// import Member from './components/Member';
+// import ComponentsWithFunction from './components/ComponentsWithFunction'
+// import Father from './components/Father'
+import ClassComponent from './components/ClassComponent'
+import Counter from './components/Counter'
 
-ReactDOM.render(<App />, document.getElementById('root'));
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const elemento = document.getElementById('root');
+ReactDom.render(
+    <div>
+       <Counter numero={100}/>
+    </div>
+, elemento)
