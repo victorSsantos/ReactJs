@@ -1,10 +1,8 @@
 import React ,{Component} from 'react';
-import axios from 'axios';
-import './homebutton.css';
-import {ReactComponent as SearchIcon} from '../img/Search Icon.svg';
 import {withRouter } from 'react-router';
+import './homebutton.css';
 
-
+//Commponent referente botão home para voltar para tela inicial
 class HomeButton extends Component {
     render(){
         return (

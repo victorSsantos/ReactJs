@@ -1,10 +1,27 @@
-import React from 'react';
+import React, {Component} from 'react';
+import HomeButton from '../components/homebutton';
+import SearchInput from '../components/search' ;
+import './result.css'
 
-const Result = () => (
-    <div className="title">
-        <h4>Detail</h4>
-        <p>Essa é minha página de detalhes do perfil</p>
-    </div>
-);
+export default class Result extends Component {
+    constructor (props) {
+        super(props);
+        this.state = {
+            perfilInput:'',
+            perfilContent:'',
+        };
+    }
 
-export default Result;
+    render () {
+        return(
+            <div className="Result" >
+                <span className="Span-Home Menu">
+                    <HomeButton className="Github-Search Menu"/>
+                </span>
+                <span className="Span-Search Menu">
+                    <SearchInput/>
+                </span>
+            </div>
+        );
+    }
+}

@@ -10,12 +10,17 @@ class Search extends Component {
         this.state = {
             perfilInput:'',
             perfilContent:'',
+            placeholder:'Type here...'
         };
+    }
+
+    setPlaceholder = (placeholder) =>{
+        this.setState({placeholder});
     }
 
     //Realiza request na api do git
     searchClick = () => {
-        var uri = `https://api.github.com/users/${this.state.perfilInput}`;
+        var uri = `https://api.github.com/users/${this.state.perfilInput}/repos`;
         console.log("Uri da requisição: " + uri);
 
        axios.get(uri)
@@ -40,7 +45,7 @@ class Search extends Component {
     render () {
         return(
             <span>
-                <input className="Search-Input" type='text' onChange={this.handlerEvent}/>
+                <input className="Search-Input" type='text' onChange={this.handlerEvent} placeholder={this.state.placeholder}/>
                 <button className="button-Search" onClick={this.searchClick}>
                     <SearchIcon/>
                 </button>
