@@ -2,8 +2,8 @@ import React from 'react';
 
 const Result = () => (
     <div className="title">
-        <h4>Result</h4>
-        <p>Essa é minha página de resultado</p>
+        <h4>Detail</h4>
+        <p>Essa é minha página de detalhes do perfil</p>
     </div>
 );
 

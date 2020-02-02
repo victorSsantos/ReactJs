@@ -1,71 +1,24 @@
-@font-face{
-    font-family: 'Monaco';
-    src: url('../fonts/Monaco.ttf')
-}
-
-@font-face{
-    font-family: 'Raleway';
-    src: url('../fonts/Raleway-ExtraLightItalic.ttf')
-}
-
-.Home {
-    width: 1152px;
-    height: 700px;
-    background-color: var(--white);
-    margin: 0 auto 0 auto;
-}
-
-.Div-Search {
-    display: flex;
-    justify-content: space-between;
-}
-
-.Github-Search {
-    width: 415px;
-    height: 81px;
-    font-family: Monaco;
-    font-size: 60px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #000000;
-}
-.Github-Search .text-style-1 {
-    font-family: Raleway;
-    font-weight: 200;
-    font-style: italic;
-}
-
-.Div-Input {
-    display: flex; 
-    justify-content: center;
-    position: absolute;
-    margin-left: 201px;
-    margin-top: 325px;
-}
-
 .Search-Input {
     width: 650px;
     height: 50px;
     background-color: var(--white);
-    padding: 14px 20px;
+    padding:0px;
+    font-size: large;
     border-style: solid;
     border-width: 2px;
     border-color:gainsboro;
-    border-radius: 3px
+    border-radius: 3px;
+    display: flex; 
+    justify-content: center;
 }
   
-button {
+.buttonSearch {
     width: 100px;
     height: 50px;
     border-radius: 3px;
     background-color: #ac53f2;
     border: none;
-    text-align: center;
     text-decoration: none;
-    display: inline-block;
 }
 
 .Search-Icon {
@@ -74,4 +27,13 @@ button {
     object-fit: contain;
     box-shadow: 0 0 4px NaNpx var(--black-40);
     background-color: var(--white);
+}
+
+.Span-Input {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    margin-left: 201px;
+    margin-top: 325px;
 }

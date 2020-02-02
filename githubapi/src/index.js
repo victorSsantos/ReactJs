@@ -3,16 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Search from './components/search';
-import Result from './components/result';
-import NotFound from './components/notfound';
+import Result from './pages/result';
+import NotFound from './pages/notfound';
+import Home from './home';
 
 ReactDOM.render(
     (
         <Router>
             <App>
                 <Switch>
-                    <Route exact path="/" component={Search}/>
+                    <Route exact path="/" component={Home}/>
                     <Route path="/result" component={Result}/>
                     <Route path="/notfound" component={NotFound}/>
                 </Switch>
