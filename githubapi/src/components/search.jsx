@@ -39,9 +39,9 @@ class Search extends Component {
 
     render () {
         return(
-            <span className="Span-Input">
+            <span>
                 <input className="Search-Input" type='text' onChange={this.handlerEvent}/>
-                <button className="buttonSearch" onClick={this.searchClick}>
+                <button className="button-Search" onClick={this.searchClick}>
                     <SearchIcon/>
                 </button>
             </span>

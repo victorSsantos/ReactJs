@@ -1,10 +1,27 @@
-import React from 'react';
+import React, {Component} from 'react';
+import HomeButton from '../components/homebutton';
+import SearchInput from '../components/search' ;
+import './notfound.css';
 
-const NotFound = () => (
-    <div className="title">
-        <h4>NotFound</h4>
-        <p>Essa é minha página de não encontrado</p>
-    </div>
-);
+export default class NotFound extends Component {
+    constructor (props) {
+        super(props);
+        this.state = {
+            perfilInput:'',
+            perfilContent:'',
+        };
+    }
 
-export default NotFound;
+    render () {
+        return(
+            <div className="Not-Found"  >
+                <span className="Span-Home NotFound MenuHomeButton">
+                    <HomeButton className="MenuHomeButton"/>
+                </span>
+                <span className="Span-Search NotFound">
+                    <SearchInput/>
+                </span>
+            </div>
+        );
+    }
+}

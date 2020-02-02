@@ -1,7 +1,7 @@
 import React ,{Component} from 'react';
 import './home.css';
 import SearchInput from './components/search'
-import {withRouter } from 'react-router-dom'
+import HomeButton from './components/homebutton'
 
 export default class Home extends Component {
     constructor (props) {
@@ -14,12 +14,13 @@ export default class Home extends Component {
 
     render () {
         return(
-            <div className="Home">
-                <div className="Github-Search">
-                    <span>Github</span>
-                    <span className="text-style-1"> Search</span>
-                </div>
-                <SearchInput/>
+            <div className="Home"  >
+                <span className="Span-Home">
+                    <HomeButton/>
+                </span>
+                <span className="Span-Search">
+                    <SearchInput/>
+                </span>
             </div>
         );
     }
