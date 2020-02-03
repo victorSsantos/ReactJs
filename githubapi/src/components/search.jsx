@@ -1,7 +1,7 @@
 import React ,{Component} from 'react';
 import axios from 'axios';
 import './search.css';
-import {ReactComponent as SearchIcon} from '../img/Search Icon.svg';
+import {ReactComponent as SearchIcon} from '../img/search_icon.svg';
 import {withRouter } from 'react-router';
 
 class Search extends Component {
@@ -10,29 +10,24 @@ class Search extends Component {
         this.state = {
             perfilInput:'',
             perfilContent:'',
-            placeholder:'Type here...'
+            placeholder: ''
         };
-    }
-
-    setPlaceholder = (placeholder) =>{
-        this.setState({placeholder});
     }
 
     //Realiza request na api do git
     searchClick = () => {
-        var uri = `https://api.github.com/users/${this.state.perfilInput}/repos`;
+        var uri = `https://api.github.com/users/${this.state.perfilInput}`;
         console.log("Uri da requisição: " + uri);
 
        axios.get(uri)
-            .then(result => {
+            .then(() => {
                 //se request retorna status 200 (usuario encontrato), router acessa a pagina result
-                console.log("usuario encontrato:" + result.data);
-                this.setState({perfilContent: result.data});
-                this.props.history.push('/result');
+                console.log("SUCCESS")
+                this.props.history.push(`/result/${this.state.perfilInput}`);
             }
         ).catch(error => {
             //Se voltar status de erro 404 (Not Found), router acessa a pagina notfound
-            console.log("ERRO: " + error.message);
+            console.log("ERROR: " + error.message);
             this.props.history.push('/notfound');
         });
     }
@@ -45,7 +40,7 @@ class Search extends Component {
     render () {
         return(
             <span>
-                <input className="Search-Input" type='text' onChange={this.handlerEvent} placeholder={this.state.placeholder}/>
+                <input className="Search-Input" type='text' onChange={this.handlerEvent} placeholder={this.props.placeHolderText}/>
                 <button className="button-Search" onClick={this.searchClick}>
                     <SearchIcon/>
                 </button>

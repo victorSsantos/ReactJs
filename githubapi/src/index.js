@@ -13,7 +13,7 @@ ReactDOM.render(
             <App>
                 <Switch>
                     <Route exact path="/" component={Home}/>
-                    <Route path="/result" component={Result}/>
+                    <Route exact path="/result/:id" component={Result}/>
                     <Route path="/notfound" component={NotFound}/>
                 </Switch>
             </App>

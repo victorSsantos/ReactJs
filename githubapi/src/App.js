@@ -3,14 +3,9 @@ import './App.css';
 import {withRouter} from 'react-router-dom';
 
 class App extends Component {
-
-  componentDidMount() {
-    this.props.history.push('/');
-  }
- 
   render() {
    return (
-    <div className="App">
+    <div className="App" >
         <div id="main">
             <main>
                 <div className="content" id="content">
