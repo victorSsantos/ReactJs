@@ -4,16 +4,6 @@ import SearchInput from '../components/search' ;
 import './notfound.css'
 
 export default class NotFound extends Component {
-    constructor (props) {
-        super(props);
-        this.state = {
-            perfilInput:'',
-            perfilContent:'',
-        };
-    }
-
-    
-
     render () {
         return(
             <div className="Not-Found" >
