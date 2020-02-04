@@ -23,6 +23,7 @@ class Search extends Component {
             .then(() => {
                 //se request retorna status 200 (usuario encontrato), router acessa a pagina result
                 console.log("SUCCESS")
+                this.props.history.push('/');
                 this.props.history.push(`/result/${this.state.perfilInput}`);
             }
         ).catch(error => {

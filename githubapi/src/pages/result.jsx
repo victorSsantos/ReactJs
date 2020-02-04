@@ -3,6 +3,7 @@ import HomeButton from '../components/homebutton';
 import SearchInput from '../components/search' ;
 import axios from 'axios';
 import './result.css';
+import ReposDetail from '../components/reposDetail'
 
 export default class Result extends Component {
     constructor (props) {
@@ -21,8 +22,7 @@ export default class Result extends Component {
         const uriPerfil = `https://api.github.com/users/${this.props.match.params.id}`;
         const uriRepos = uriPerfil + "/repos";
 
-//#region Recupera Perfil
-
+        //Recupera Perfil
         axios.get(uriPerfil)
             .then((result) => {
                 this.setState({perfilContent:result.data});
@@ -32,22 +32,22 @@ export default class Result extends Component {
             this.props.history.push('/notfound');
         });
 
-//#endregion
-
-//#region Recupera Repositorios
-
+        //Recupera Repositorios
         axios.get(uriRepos)
             .then((result) => {
-                //se request retorna status 200 (usuario encontrato), montamos a pagina com o resultado
+                var starSum = 0;
+        
+                for (var i = 0 ; i <= result.data.length -1 ; i++ ){
+                    starSum += result.data[i].stargazers_count;
+                }
+            
+                this.setState({starSum:starSum});
                 this.setState({reposContent:result.data});
             }
         ).catch(error => {
-            //Se voltar status de erro 404 (Not Found), router acessa a pagina notfound
             console.log("ERRO: " + error.message);
             this.props.history.push('/notfound');
         });
-
-//#endregion
     }
 
     render () {
@@ -84,6 +84,7 @@ export default class Result extends Component {
                                 </span>
                                 <span className="Perfil-List-Item Align-Helper">
                                     <img src={require("../img/star_icon.svg")} alt="star_icon.svg"/>
+                                    <span className ="Item">{this.state.starSum}</span>
                                 </span>
                                 <span className="Perfil-List-Item Align-Helper">
                                     <img src={require("../img/repositorie_icon.svg")} alt="repositorie_icon.svg"/> 
@@ -96,7 +97,9 @@ export default class Result extends Component {
                             </span>
                         </span>
                         <span className="Span-Repos">
-                            <span ></span>
+                            <span >
+                                <ReposDetail reposContent={this.state.reposContent}/>
+                            </span>
                         </span>
                     </div>
                 </div>
