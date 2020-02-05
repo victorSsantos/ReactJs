@@ -52,7 +52,7 @@ export default class Result extends Component {
 
     render () {
         if(this.state.perfilContent===false){
-            return <div>pagina carregando</div>
+            return <div></div>
         }else {
             return(
                 <div className="Result">

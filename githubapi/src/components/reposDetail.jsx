@@ -6,7 +6,7 @@ export default class ReposDetail extends Component {
         const items = [];
 
         if(this.props.reposContent < 1 ){
-            return <div>Carregando repositorios!!!</div>
+            return <div></div>
         }else{
             for (var i = 0 ; i <= this.props.reposContent.length -1 ; i++ ){
                 items.push(
