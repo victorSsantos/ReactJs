@@ -7,7 +7,7 @@
     border-width: 2px;
     border-radius: 3px;
     border-color:gainsboro;
-    vertical-align: top;
+    vertical-align: top;    
 }
   
 .button-Search {
@@ -39,4 +39,9 @@
 
 input{
     text-indent: 17px;
+}
+
+svg{
+    vertical-align: bottom;
+    margin: auto 0 auto 0;
 }
