@@ -51,6 +51,7 @@ export default class Result extends Component {
     }
 
     render () {
+        //Valida se state perfilContente ja recebeu resultado da requisição
         if(this.state.perfilContent===false){
             return <div></div>
         }else {

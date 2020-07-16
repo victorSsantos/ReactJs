@@ -17,6 +17,7 @@ class Search extends Component {
     //Realiza request na api do git
     searchClick = () => {
         var uri = `https://api.github.com/users/${this.state.perfilInput}`;
+
         console.log("Uri da requisição: " + uri);
 
        axios.get(uri)
